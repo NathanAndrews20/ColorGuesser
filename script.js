@@ -5,6 +5,7 @@ document.getElementById('new-colors-button').addEventListener('click', event => 
     const squares = document.getElementById('squares-container').children;
     for(let i = 0; i<squares.length; i++){
         let currentSquare = squares[i];
+        currentSquare.style.visibility = 'visible';
         currentSquare.style.backgroundColor = generateColorString();
     }
     answer = squares[Math.floor(Math.random()*(squares.length-1))].style.backgroundColor;
@@ -19,7 +20,8 @@ document.getElementById('squares-container').addEventListener('click', event => 
         response.innerHTML = 'CORRECT';
     }
     else{
-        response.innerHTML = 'INCORRECT'
+        response.innerHTML = 'INCORRECT';
+        square.style.visibility = 'hidden';
     }
 });
 
