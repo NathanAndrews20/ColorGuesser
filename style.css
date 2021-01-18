@@ -52,6 +52,25 @@ html, body{
 #menu-container{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+}
+
+#new-colors-button{
+    background: none;
+    border: none;
+    color: teal;
+    transition: all 300ms;
+    height: 100%;
+}
+
+#new-colors-button:hover{
+    background-color: teal;
+    color: white;
+    transition: all 300ms;
+}
+
+#feedback{
+    visibility: hidden;
 }
 
 #squares-grid-container{
