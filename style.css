@@ -1,3 +1,7 @@
+*{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 html, body{
     height: 100%;
     margin: 0;
@@ -13,6 +17,32 @@ html, body{
 
 #header-grid-container{
     grid-area: header;
+}
+
+#header-container{
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: teal;
+    color: white;
+    margin: 0px;
+}
+
+#first-line{
+    margin: 10px 0px 0px 0px;
+}
+
+#answer-color{
+    font-size: 64px;
+    font-weight: normal;
+    margin: 0px;
+}
+
+#last-line{
+    margin: 0px 0px 10px 0px;
 }
 
 #menu-grid-container{
@@ -47,15 +77,6 @@ html, body{
 #spacer-bottom{
     grid-area: spacer-bottom;
 }
-
-
-
-
-
-
-
-
-
 
 .square{
     width: 200px;
