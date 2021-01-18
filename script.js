@@ -4,7 +4,8 @@ document.getElementById('new-colors-button').addEventListener('click', event => 
     document.getElementById('feedback').innerHTML = '';
     const squares = document.getElementById('squares-container').children;
     for(let i = 0; i<squares.length; i++){
-        let currentSquare = squares[i];
+        const currentSquare = squares[i];
+        currentSquare.style.transition = '';
         currentSquare.style.visibility = 'visible';
         currentSquare.style.backgroundColor = generateColorString();
     }
@@ -19,10 +20,18 @@ document.getElementById('squares-container').addEventListener('click', event => 
     feedback.style.visibility = 'visible';
     if(square.style.backgroundColor === answer){
         feedback.innerHTML = 'CORRECT';
+        const squares = document.getElementById('squares-container').children;
+        for(let i = 0; i<squares.length; i++){
+            const currentSquare = squares[i];
+            currentSquare.style.backgroundColor = answer;
+            currentSquare.style.transition = 'all 500ms';
+            currentSquare.style.opacity = '1';
+            
+        }
     }
     else{
         feedback.innerHTML = 'TRY AGAIN';
-        square.style.visibility = 'hidden';
+        square.style.opacity = '0';
     }
 });
 
