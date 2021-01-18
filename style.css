@@ -36,7 +36,7 @@ html, body{
 }
 
 #answer-color{
-    font-size: 64px;
+    font-size: 56px;
     font-weight: normal;
     margin: 0px;
 }
@@ -52,6 +52,7 @@ html, body{
 #menu-container{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    height: 100%;
     justify-items: center;
 }
 
@@ -59,8 +60,8 @@ html, body{
     background: none;
     border: none;
     color: teal;
-    transition: all 300ms;
     height: 100%;
+    transition: all 300ms;
 }
 
 #new-colors-button:hover{
@@ -80,7 +81,7 @@ html, body{
 #squares-container{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 0px, repeat(2, 1fr) 0px;
+    grid-template-rows: repeat(2, 1fr);
     grid-template-areas: 
         "square square square" 
         "square square square";
@@ -88,6 +89,7 @@ html, body{
     justify-items: center;
     align-items: center;
     height: 100%;
+    background-color: rgb(32, 32, 32);
 }
 
 #spacer-top {
@@ -99,9 +101,9 @@ html, body{
 }
 
 .square{
-    width: 200px;
-    height: 200px;
-    border-radius: 50px;
+    width: 30vmin;
+    height: 30vmin;
+    border-radius: 5vmin;
     background-color: black;
     border: 1px white solid;
 }
