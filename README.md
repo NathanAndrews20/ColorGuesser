@@ -9,3 +9,4 @@ Color Guessing Program
 
 What I Learned
 --------------
+* Implemented ```CSS Grid``` for program layout
