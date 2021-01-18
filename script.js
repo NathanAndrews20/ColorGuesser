@@ -1,7 +1,7 @@
 let answer = '';
 
 document.getElementById('new-colors-button').addEventListener('click', event => {
-    document.getElementById('response').innerHTML = '';
+    document.getElementById('feedback').innerHTML = '';
     const squares = document.getElementById('squares-container').children;
     for(let i = 0; i<squares.length; i++){
         let currentSquare = squares[i];
@@ -9,18 +9,19 @@ document.getElementById('new-colors-button').addEventListener('click', event => 
         currentSquare.style.backgroundColor = generateColorString();
     }
     answer = squares[Math.floor(Math.random()*(squares.length-1))].style.backgroundColor;
-    document.getElementById('answer-color').innerHTML = answer;
+    document.getElementById('answer-color').innerHTML = answer.toUpperCase();
 });
 
 document.getElementById('squares-container').addEventListener('click', event => {
     if(event.target.id === 'squares-container') { return; }
     const square = event.target;
-    const response = document.getElementById('response');
+    const feedback = document.getElementById('feedback');
+    feedback.style.visibility = 'visible';
     if(square.style.backgroundColor === answer){
-        response.innerHTML = 'CORRECT';
+        feedback.innerHTML = 'CORRECT';
     }
     else{
-        response.innerHTML = 'INCORRECT';
+        feedback.innerHTML = 'TRY AGAIN';
         square.style.visibility = 'hidden';
     }
 });
