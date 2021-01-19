@@ -9,7 +9,7 @@ html, body{
 
 #game-container{
     display: grid;
-    grid-template-rows: 150px 50px 1fr;
+    grid-template-rows: 1fr 50px 5fr;
     grid-template-areas: "header" "menu" "content";
     height: 100%;
 }
@@ -30,17 +30,21 @@ html, body{
 
 #first-line{
     margin: 10px 0px 0px 0px;
+
+    font-size: 3vmin;
 }
 
 #answer-color{
     margin: 0px;
 
-    font-size: 56px;
+    font-size: 10vmin;
     font-weight: normal;
 }
 
 #last-line{
     margin: 0px 0px 10px 0px;
+
+    font-size: 3vmin;
 }
 
 #menu-container{
