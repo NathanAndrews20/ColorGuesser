@@ -1,4 +1,5 @@
 let answer = '';
+let lives = 3;
 
 window.addEventListener('load', () => {
     setLives(10);
@@ -34,6 +35,18 @@ document.getElementById('squares-container').addEventListener('click', event => 
         feedback.innerHTML = 'Try Again';
         selectedSquare.style.opacity = '0';
         subtractLife(1);
+        if(lives === 0){
+            const modalBox = document.getElementById('modal-box-flex-container');
+            modalBox.style.visibility = 'visible';
+            modalBox.style.opacity = '1';
+
+            document.getElementById('play-again-button').addEventListener('click', ()=>{
+                modalBox.style.visibility = 'hidden';
+                modalBox.style.opacity = '0';
+                setLives(10);
+                loadGame();
+            });
+        }
     }
 });
 
@@ -54,15 +67,18 @@ function loadGame(){
 }
 
 function setLives(numLives){
-    document.getElementById('life-count').innerHTML = numLives;
+    lives = numLives;
+    document.getElementById('life-count').innerHTML = lives;
 }
 
 function addLife(numLives){
-    document.getElementById('life-count').innerHTML = parseInt(document.getElementById('life-count').innerHTML) + numLives;
+    lives += numLives;
+    document.getElementById('life-count').innerHTML = lives;
 }
 
 function subtractLife(numLives){
-    document.getElementById('life-count').innerHTML = parseInt(document.getElementById('life-count').innerHTML) - numLives;
+    lives -= numLives;
+    document.getElementById('life-count').innerHTML = lives;
 }
 
 function generateColorString(){
