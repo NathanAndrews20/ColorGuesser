@@ -15,11 +15,11 @@ document.getElementById('new-colors-button').addEventListener('click', event => 
 
 document.getElementById('squares-container').addEventListener('click', event => {
     if(event.target.id === 'squares-container') { return; }
-    const square = event.target;
+    const selectedSquare = event.target;
     const feedback = document.getElementById('feedback');
     feedback.style.visibility = 'visible';
-    if(square.style.backgroundColor === answer){
-        feedback.innerHTML = 'CORRECT';
+    if(selectedSquare.style.backgroundColor === answer){
+        feedback.innerHTML = 'Correct';
         const squares = document.getElementById('squares-container').children;
         for(let i = 0; i<squares.length; i++){
             const currentSquare = squares[i];
@@ -30,8 +30,8 @@ document.getElementById('squares-container').addEventListener('click', event => 
         }
     }
     else{
-        feedback.innerHTML = 'TRY AGAIN';
-        square.style.opacity = '0';
+        feedback.innerHTML = 'Try Again';
+        selectedSquare.style.opacity = '0';
     }
 });
 

@@ -5,7 +5,6 @@
 html, body{
     height: 100%;
     margin: 0;
-    overflow: hidden;
 }
 
 #game-container{
@@ -15,20 +14,18 @@ html, body{
     height: 100%;
 }
 
-#header-grid-container{
-    grid-area: header;
-}
-
 #header-container{
+    grid-area: header;
     display: flex;
     flex-direction: column;
-    font-weight: bold;
-    height: 100%;
     justify-content: center;
     align-items: center;
-    background-color: teal;
+    height: 100%;  
+    
     color: white;
-    margin: 0px;
+    background-color: teal;
+
+    font-weight: bold;
 }
 
 #first-line{
@@ -36,20 +33,18 @@ html, body{
 }
 
 #answer-color{
+    margin: 0px;
+
     font-size: 56px;
     font-weight: normal;
-    margin: 0px;
 }
 
 #last-line{
     margin: 0px 0px 10px 0px;
 }
 
-#menu-grid-container{
-    grid-area: menu;
-}
-
 #menu-container{
+    grid-area: menu;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     height: 100%;
@@ -57,28 +52,31 @@ html, body{
 }
 
 #new-colors-button{
+    height: 100%;
+
+    color: teal;
     background: none;
     border: none;
-    color: teal;
-    height: 100%;
+    
     transition: all 300ms;
 }
 
 #new-colors-button:hover{
-    background-color: teal;
     color: white;
+    background-color: teal;
+    
     transition: all 300ms;
 }
 
 #feedback{
+    height: 100%;
+
+    color: teal;
     visibility: hidden;
 }
 
-#squares-grid-container{
-    grid-area: content;
-}
-
 #squares-container{
+    grid-area: content;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -89,21 +87,15 @@ html, body{
     justify-items: center;
     align-items: center;
     height: 100%;
+
     background-color: rgb(32, 32, 32);
 }
 
-#spacer-top {
-    grid-area: spacer-top;
-}
-
-#spacer-bottom{
-    grid-area: spacer-bottom;
-}
-
 .square{
-    width: 30vmin;
     height: 30vmin;
-    border-radius: 5vmin;
+    width: 30vmin;
+    
     background-color: black;
     border: 1px white solid;
+    border-radius: 5vmin;
 }
