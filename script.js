@@ -1,6 +1,7 @@
 let answer = '';
 
 window.addEventListener('load', () => {
+    setLives(10);
     loadGame();
 });
 
@@ -32,6 +33,7 @@ document.getElementById('squares-container').addEventListener('click', event => 
     else{
         feedback.innerHTML = 'Try Again';
         selectedSquare.style.opacity = '0';
+        subtractLife(1);
     }
 });
 
@@ -49,6 +51,18 @@ function loadGame(){
     }
     answer = squares[Math.floor(Math.random()*(squares.length-1))].style.backgroundColor;
     document.getElementById('answer-color').innerHTML = answer.toUpperCase();
+}
+
+function setLives(numLives){
+    document.getElementById('life-count').innerHTML = numLives;
+}
+
+function addLife(numLives){
+    document.getElementById('life-count').innerHTML = parseInt(document.getElementById('life-count').innerHTML) + numLives;
+}
+
+function subtractLife(numLives){
+    document.getElementById('life-count').innerHTML = parseInt(document.getElementById('life-count').innerHTML) - numLives;
 }
 
 function generateColorString(){

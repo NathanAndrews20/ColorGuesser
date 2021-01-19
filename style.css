@@ -79,6 +79,10 @@ html, body{
     visibility: hidden;
 }
 
+#lives{
+    color: teal;
+}
+
 #squares-container{
     grid-area: content;
     display: grid;
