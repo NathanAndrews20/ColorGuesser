@@ -1,16 +1,11 @@
 let answer = '';
 
-document.getElementById('new-colors-button').addEventListener('click', event => {
-    document.getElementById('feedback').innerHTML = '';
-    const squares = document.getElementById('squares-container').children;
-    for(let i = 0; i<squares.length; i++){
-        const currentSquare = squares[i];
-        currentSquare.style.transition = '';
-        currentSquare.style.opacity = '1';
-        currentSquare.style.backgroundColor = generateColorString();
-    }
-    answer = squares[Math.floor(Math.random()*(squares.length-1))].style.backgroundColor;
-    document.getElementById('answer-color').innerHTML = answer.toUpperCase();
+window.addEventListener('load', () => {
+    loadGame();
+});
+
+document.getElementById('new-colors-button').addEventListener('click', () => {
+    loadGame();
 });
 
 document.getElementById('squares-container').addEventListener('click', event => {
@@ -34,6 +29,19 @@ document.getElementById('squares-container').addEventListener('click', event => 
         selectedSquare.style.opacity = '0';
     }
 });
+
+function loadGame(){
+    document.getElementById('feedback').innerHTML = '';
+    const squares = document.getElementById('squares-container').children;
+    for(let i = 0; i<squares.length; i++){
+        const currentSquare = squares[i];
+        currentSquare.style.transition = '';
+        currentSquare.style.opacity = '1';
+        currentSquare.style.backgroundColor = generateColorString();
+    }
+    answer = squares[Math.floor(Math.random()*(squares.length-1))].style.backgroundColor;
+    document.getElementById('answer-color').innerHTML = answer.toUpperCase();
+}
 
 function generateColorString(){
     const max = 255;
