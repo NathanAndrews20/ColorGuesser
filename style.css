@@ -7,6 +7,79 @@ html, body{
     margin: 0;
 }
 
+#modal-box-flex-container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#modal-box{
+    display: grid;
+    position: absolute;
+    width: 50vw;
+    height: 50vh;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "modal-header" "modal-correct-answer" "modal-play-again";;
+}
+
+#modal-header{
+    margin: 0;
+    grid-area: modal-header;
+    background-color: rgb(32, 32, 32);
+    color: white;
+    font-weight: bold;
+    font-size: 5vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5vmin 5vmin 0 0;
+    border-top: 2px white solid;
+    border-left: 2px white solid;
+    border-right: 2px white solid;
+}
+
+#modal-correct-answer-container{
+    grid-area: modal-correct-answer;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#answer-message{
+    font-size: 3vmin
+}
+
+#answer-square{
+    height: 10vmin;
+    width: 10vmin;
+    background-color: black;
+    border-radius: 2.5vmin;
+}
+
+#play-again-button{
+    height: 100%;
+
+    color: teal;
+    background: white;
+    border-radius: 0px 0px 5vmin 5vmin;
+    border: 2px teal solid;
+
+    font-size: 5vmin;
+    
+    transition: background-color 300ms;
+}
+
+#play-again-button:hover{
+    color: white;
+    background-color: teal;
+    
+    transition: background-color 300ms;
+}
+
 #game-container{
     display: grid;
     grid-template-rows: 1fr 50px 5fr;
