@@ -64,6 +64,7 @@ function loadGame(){
     }
     answer = squares[Math.floor(Math.random()*(squares.length-1))].style.backgroundColor;
     document.getElementById('answer-color').innerHTML = answer.toUpperCase();
+    document.getElementById('answer-square').style.backgroundColor = answer;
 }
 
 function setLives(numLives){
