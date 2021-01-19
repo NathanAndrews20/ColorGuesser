@@ -10,3 +10,4 @@ Color Guessing Program
 What I Learned
 --------------
 * Implemented ```CSS Grid``` for program layout
+* Implemented a ```Modal Box``` to start a new game
