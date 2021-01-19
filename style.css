@@ -156,8 +156,14 @@ html, body{
     visibility: hidden;
 }
 
-#lives{
+#stats-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     color: teal;
+}
+
+#lives{
+    font-weight: bold;
 }
 
 #squares-container{
