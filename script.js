@@ -14,6 +14,11 @@ document.getElementById('squares-container').addEventListener('click', event => 
     const feedback = document.getElementById('feedback');
     feedback.style.visibility = 'visible';
     if(selectedSquare.style.backgroundColor === answer){
+        const headerContainer = document.getElementById('header-container');
+        headerContainer.style.transitionProperty = 'background-color';
+        headerContainer.style.transitionDuration = '500ms';
+        headerContainer.style.backgroundColor = answer;
+
         feedback.innerHTML = 'Correct';
         const squares = document.getElementById('squares-container').children;
         for(let i = 0; i<squares.length; i++){
@@ -32,6 +37,9 @@ document.getElementById('squares-container').addEventListener('click', event => 
 
 function loadGame(){
     document.getElementById('feedback').innerHTML = '';
+    document.getElementById('header-container').style.backgroundColor = 'teal';
+    document.getElementById('header-container').style.transition = '';
+
     const squares = document.getElementById('squares-container').children;
     for(let i = 0; i<squares.length; i++){
         const currentSquare = squares[i];
