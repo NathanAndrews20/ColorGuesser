@@ -1,6 +1,12 @@
 let answer = '';
 let lives = 3;
 let score = 0;
+let highScore = 0;
+
+if(localStorage.length==1){
+    highScore = parseInt(localStorage.getItem('highScore'));
+    displayHighScore(highScore);
+}
 
 window.addEventListener('load', () => {
     setLives(10);
@@ -35,6 +41,12 @@ document.getElementById('squares-container').addEventListener('click', event => 
             currentSquare.style.transitionDuration = '500ms';
             currentSquare.style.opacity = '1';  
             currentSquare.style.pointerEvents = 'none';
+        }
+
+        if(score > highScore){
+            highScore = score;
+            localStorage.setItem('highScore',highScore);
+            displayHighScore(highScore);
         }
     }
     else{
@@ -80,6 +92,10 @@ function loadGame(){
 
 function displayScore(score){
     document.getElementById('score-value').innerHTML = score;
+}
+
+function displayHighScore(highScore){
+    document.getElementById('high-score-value').innerHTML = highScore;
 }
 
 function setLives(numLives){
