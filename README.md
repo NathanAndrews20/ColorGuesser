@@ -1,4 +1,4 @@
-Clock
+ColorGuesser
 =========================
 
 Nathan Andrews
