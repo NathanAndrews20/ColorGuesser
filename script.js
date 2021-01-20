@@ -1,5 +1,5 @@
 let answer = '';
-let lives = 3;
+let lives = 0;
 let score = 0;
 let highScore = 0;
 
