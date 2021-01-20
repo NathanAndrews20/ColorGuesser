@@ -1,5 +1,6 @@
 let answer = '';
 let lives = 3;
+let score = 0;
 
 window.addEventListener('load', () => {
     setLives(10);
@@ -16,6 +17,10 @@ document.getElementById('squares-container').addEventListener('click', event => 
     const feedback = document.getElementById('feedback');
     feedback.style.visibility = 'visible';
     if(selectedSquare.style.backgroundColor === answer){
+
+        score++;
+        displayScore(score);
+
         const headerContainer = document.getElementById('header-container');
         headerContainer.style.transitionProperty = 'background-color';
         headerContainer.style.transitionDuration = '500ms';
@@ -29,6 +34,7 @@ document.getElementById('squares-container').addEventListener('click', event => 
             currentSquare.style.transitionProperty = 'opacity, background-color';
             currentSquare.style.transitionDuration = '500ms';
             currentSquare.style.opacity = '1';  
+            currentSquare.style.pointerEvents = 'none';
         }
     }
     else{
@@ -43,6 +49,10 @@ document.getElementById('squares-container').addEventListener('click', event => 
             document.getElementById('play-again-button').addEventListener('click', ()=>{
                 modalBox.style.visibility = 'hidden';
                 modalBox.style.opacity = '0';
+
+                score = 0;
+                displayScore(score);
+
                 setLives(10);
                 loadGame();
             });
@@ -61,10 +71,15 @@ function loadGame(){
         currentSquare.style.transition = '';
         currentSquare.style.opacity = '1';
         currentSquare.style.backgroundColor = generateColorString();
+        currentSquare.style.pointerEvents = 'auto';
     }
     answer = squares[Math.floor(Math.random()*(squares.length-1))].style.backgroundColor;
     document.getElementById('answer-color').innerHTML = answer.toUpperCase();
     document.getElementById('answer-square').style.backgroundColor = answer;
+}
+
+function displayScore(score){
+    document.getElementById('score-value').innerHTML = score;
 }
 
 function setLives(numLives){
