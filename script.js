@@ -1,12 +1,9 @@
 let answer = '';
 let lives = 0;
 let score = 0;
-let highScore = 0;
 
-if(localStorage.length==1){
-    highScore = parseInt(localStorage.getItem('highScore'));
-    displayHighScore(highScore);
-}
+let highScore = parseInt(localStorage.getItem('highScore'));
+if (highScore === null) { highScore = 0 };
 
 window.addEventListener('load', () => {
     setLives(10);
