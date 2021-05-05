@@ -1,9 +1,9 @@
 let answer = '';
 let lives = 0;
 let score = 0;
+const localStorageKey = 'ColorGuesserHighScore'
 
-let highScore = parseInt(localStorage.getItem('highScore'));
-if (highScore === null) { highScore = 0 };
+let highScore = (localStorage.getItem(localStorageKey)) ? parseInt((localStorage.getItem(localStorageKey))) : 0;
 
 window.addEventListener('load', () => {
     setLives(10);
@@ -42,7 +42,7 @@ document.getElementById('squares-container').addEventListener('click', event => 
 
         if(score > highScore){
             highScore = score;
-            localStorage.setItem('highScore',highScore);
+            localStorage.setItem(localStorageKey, `${highScore}`);
             displayHighScore(highScore);
         }
     }
